@@ -15,14 +15,15 @@ It replaces the salon's spreadsheet-and-texting routine, where follow-ups were f
 - every reply deadline is a durable timer
 - the event history shows exactly what happened
 
-## Run it
+## Run it (one command)
 
-Requirements: **Node.js 20+** (tested on 26) and **Docker** (Docker Desktop, or Colima on macOS).
+Requirements: **Node.js 20+** (tested on 26) and **Docker** (Docker Desktop, or Colima on macOS). **Docker must already be running.**
 
 ```bash
-npm install
-npm run dev        # starts Temporal (Docker), the Worker and the API
+npm install && npm run dev
 ```
+
+This installs dependencies, then starts Temporal (in Docker), the Worker and the API.
 
 - **App:** <http://localhost:3000>
 - **Temporal Web UI:** <http://localhost:8233> (Workflow ID `juniper-waitlist`)
