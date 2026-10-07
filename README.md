@@ -15,6 +15,12 @@ It replaces the salon's spreadsheet-and-texting routine, where follow-ups were f
 - every reply deadline is a durable timer
 - the event history shows exactly what happened
 
+## Demo
+
+![Juniper demo: staff add an opening, it's offered to the earliest-joined client who fits, the client accepts, and the staff view updates](media/juniper-demo.gif)
+
+*Staff add an opening. It's offered to the earliest-joined client who fits, the client accepts on the offer page, and the staff view updates: booked, with the client's old appointment re-offered. Fictional data, running locally.*
+
 ## Run it (one command)
 
 Requirements: **Node.js 20+** (tested on 26) and **Docker** (Docker Desktop, or Colima on macOS). **Docker must already be running.**
