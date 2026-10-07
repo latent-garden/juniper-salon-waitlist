@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juniper Salon openings</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=La+Belle+Aurore&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/juniper.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="top">
+        <div class="brand">
+          <a class="wordmark display" href="/">Juniper Salon</a>
+          <span class="accent" aria-hidden="true">at the front desk</span>
+        </div>
+        <nav aria-label="Staff views"><a href="/openings" aria-current="page">Openings</a><a href="/waitlist">Waitlist</a></nav>
+      </header>
+
+      <main>
+        <section class="head">
+          <div>
+            <h1 class="display">Openings</h1>
+            <div class="meta"><p class="date" id="today"></p></div>
+          </div>
+          <p class="summary" id="summary"></p>
+        </section>
+
+        <div class="body body--list-first">
+          <section aria-labelledby="first-day">
+            <div class="list-head">
+              <h2 class="display list-heading" id="first-day"></h2>
+              <button class="button" type="button" id="add-toggle" aria-haspopup="dialog">Add opening</button>
+            </div>
+            <p id="form-result" class="form-result" role="status"></p>
+            <div id="ledger"></div>
+          </section>
+
+          <aside class="needs" id="needs" aria-labelledby="needs-h" hidden>
+            <h2 id="needs-h" class="display">Needs attention</h2>
+            <p class="sub">Only a person at the desk can do these.</p>
+            <ul></ul>
+            <p class="panel-note">Juniper can't see Square. Mark each one when it's done.</p>
+          </aside>
+        </div>
+        <p id="connection" class="error" hidden>Can't reach the waitlist right now. This page will update when it reconnects.</p>
+      </main>
+
+      <dialog id="add-dialog" class="add-dialog" role="dialog" aria-modal="true" aria-labelledby="add-dialog-title">
+        <form id="add-form" class="add-form" novalidate>
+          <h2 id="add-dialog-title" class="display">Add opening</h2>
+          <div class="fields">
+            <div class="field"><label for="opening-date">Date</label><input id="opening-date" name="date" type="date" required /></div>
+            <div class="field"><label for="opening-time">Time</label><input id="opening-time" name="time" type="time" step="900" required /></div>
+            <div class="field"><label for="opening-service">Service</label>
+              <select id="opening-service" name="service"><option value="haircut">Haircut</option><option value="color">Color</option><option value="blowout">Blowout</option></select></div>
+            <div class="field"><label for="opening-stylist">Stylist</label>
+              <select id="opening-stylist" name="stylist"><option>Maria</option><option>Jo</option></select></div>
+            <div class="field"><label for="opening-length">Length</label>
+              <select id="opening-length" name="durationMin">
+                <option value="45">45 minutes</option><option value="60">1 hour</option>
+                <option value="90">1 hour 30 minutes</option><option value="120">2 hours</option>
+              </select></div>
+          </div>
+          <p id="form-error" class="form-error error" role="alert"></p>
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">Add opening</button>
+            <button class="button button-quiet" type="button" id="add-cancel">Cancel</button>
+          </div>
+        </form>
+      </dialog>
+
+      <footer>Texts to clients are simulated in this prototype. Juniper doesn't write to Square; staff record bookings there.</footer>
+      <div id="announcer" class="sr-only" aria-live="polite"></div>
+    </div>
+    <script src="/format.js"></script>
+    <script src="/staff.js"></script>
+    <script src="/openings.js"></script>
+  </body>
+</html>

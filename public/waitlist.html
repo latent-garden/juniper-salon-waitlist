@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juniper Salon waitlist</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=La+Belle+Aurore&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/juniper.css" />
+    <style>
+      /* Waitlist table. */
+      .people { width: 100%; border-collapse: collapse; table-layout: fixed; }
+      .people th { padding: 0 var(--s-4) var(--s-2) 0; text-align: left; font-size: 13px; font-weight: 600; color: var(--walnut); border-bottom: 1px solid var(--rule); }
+      .people td { padding: var(--s-3) var(--s-4) var(--s-3) 0; vertical-align: baseline; border-bottom: 1px solid var(--rule); overflow-wrap: anywhere; }
+      .people th:first-child, .people td:first-child { padding-left: var(--s-4); }
+      .people td:first-child { position: relative; }
+      .people tr.has-offer td:first-child::before { content: ""; position: absolute; left: 0; top: var(--s-3); bottom: var(--s-3); width: 3px; border-radius: 2px; background: var(--rose); }
+      .people .nowrap { white-space: nowrap; }
+      .name { font-size: 16px; font-weight: 600; }
+      .people small { display: block; color: var(--pencil); font-size: 14px; }
+      .quiet td { color: var(--pencil); }
+      .quiet .name { font-weight: 500; color: var(--ink); }
+      /* Phone (<720px): each person becomes a stacked record; labels beside values. */
+      @media (max-width: 719px) {
+        .people thead, .people colgroup { display: none; }
+        .people, .people tbody, .people tr { display: block; }
+        .people tr { position: relative; padding: var(--s-3) 0 var(--s-3) var(--s-4); border-bottom: 1px solid var(--rule); }
+        .people tr.has-offer::before { content: ""; position: absolute; left: 0; top: var(--s-3); bottom: var(--s-3); width: 3px; border-radius: 2px; background: var(--rose); }
+        .people td { display: grid; grid-template-columns: 88px 1fr; column-gap: var(--s-3); padding: 2px 0; border: 0; }
+        .people td > * { grid-column: 2; }
+        .people td::before { content: attr(data-label); grid-column: 1; grid-row: 1 / span 2; color: var(--walnut); font-size: 13px; font-weight: 600; }
+        .people th:first-child, .people td:first-child { padding-left: 0; }
+        /* The client cell is the record's title: no label, no per-cell marker. */
+        .people td:first-child { display: block; position: static; margin-bottom: var(--s-1); }
+        .people td:first-child::before, .people tr.has-offer td:first-child::before { content: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="top">
+        <div class="brand">
+          <a class="wordmark display" href="/">Juniper Salon</a>
+          <span class="accent" aria-hidden="true">at the front desk</span>
+        </div>
+        <nav aria-label="Staff views"><a href="/openings">Openings</a><a href="/waitlist" aria-current="page">Waitlist</a></nav>
+      </header>
+
+      <main>
+        <section class="head">
+          <div>
+            <h1 class="display">Waitlist</h1>
+            <div class="meta"><p class="date" id="today"></p></div>
+          </div>
+          <p class="summary" id="summary"></p>
+        </section>
+
+        <section id="lists" aria-label="People on the waitlist"></section>
+        <p id="connection" class="error" hidden>Can't reach the waitlist right now. This page will update when it reconnects.</p>
+
+        <section class="how" aria-labelledby="how-h">
+          <h2 id="how-h" class="display">How offers go out</h2>
+          <p>An opening goes to the <b>earliest-joined person who fits</b>: the service, the time and the length all work.</p>
+          <p>"Only with" a stylist is a requirement. "Prefers" is a preference, not a restriction.</p>
+        </section>
+      </main>
+
+      <footer>Fictional clients for this prototype. Texts to clients are simulated.</footer>
+      <div id="announcer" class="sr-only" aria-live="polite"></div>
+    </div>
+    <script src="/format.js"></script>
+    <script src="/staff.js"></script>
+    <script src="/waitlist.js"></script>
+  </body>
+</html>

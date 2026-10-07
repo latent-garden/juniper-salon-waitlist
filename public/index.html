@@ -3,31 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Temporal assessment starter</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <title>Juniper Salon front desk</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- All fonts: SIL Open Font License (Google Fonts). -->
+    <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=La+Belle+Aurore&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/juniper.css" />
   </head>
   <body>
-    <main>
-      <p class="eyebrow">Temporal assessment starter</p>
-      <h1>Your environment is connected.</h1>
-      <p class="intro">
-        This neutral demonstration starts a Workflow, waits durably for a
-        Signal, and then completes. Replace it with the experience your
-        customer needs.
-      </p>
-      <section class="card">
-        <h2 id="phase">Ready</h2>
-        <p id="message">Start the demonstration to verify the setup.</p>
-        <button id="start">Start demo Workflow</button>
-        <button id="continue" hidden>Send continue Signal</button>
-        <p class="request-id" id="request-id"></p>
-      </section>
-      <p class="footer">
-        Inspect the execution at
-        <a href="http://localhost:8233" target="_blank">localhost:8233</a>.
-      </p>
-    </main>
-    <script src="/app.js"></script>
+    <div class="page">
+      <header class="top">
+        <div class="brand">
+          <a class="wordmark display" href="/">Juniper Salon</a>
+          <span class="accent" aria-hidden="true">at the front desk</span>
+        </div>
+        <nav aria-label="Staff views"><a href="/openings">Openings</a><a href="/waitlist">Waitlist</a></nav>
+      </header>
+
+      <main>
+        <section class="head">
+          <div>
+            <h1 class="display">Front desk</h1>
+            <div class="meta"><p class="date" id="today"></p></div>
+          </div>
+          <p class="summary" id="summary"></p>
+        </section>
+
+        <div class="body">
+          <section aria-labelledby="active-h">
+            <h2 id="active-h" class="display">Active openings</h2>
+            <div id="openings"></div>
+            <div class="next">
+              <a class="button button-primary" href="/openings">View openings</a>
+              <a class="button button-quiet" href="/waitlist">View waitlist</a>
+            </div>
+          </section>
+
+          <aside class="needs" id="needs" aria-labelledby="needs-h" hidden>
+            <h2 id="needs-h" class="display">Needs attention</h2>
+            <p class="sub">Only a person at the desk can do these.</p>
+            <ul></ul>
+            <p class="panel-note">Juniper can't see Square. Mark each one when it's done.</p>
+          </aside>
+        </div>
+        <p id="connection" class="error" hidden>Can't reach the waitlist right now. This page will update when it reconnects.</p>
+      </main>
+
+      <footer>Texts to clients are simulated in this prototype. Juniper doesn't write to Square; staff record bookings there.</footer>
+      <div id="announcer" class="sr-only" aria-live="polite"></div>
+    </div>
+    <script src="/format.js"></script>
+    <script src="/staff.js"></script>
+    <script src="/home.js"></script>
   </body>
 </html>
-

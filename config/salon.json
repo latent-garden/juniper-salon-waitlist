@@ -1,0 +1,15 @@
+{
+  "note": "Prototype salon configuration. The time zone and weekly hours are SAMPLE values (A3) until Juniper supplies real ones. Weekday 0 is Sunday; null means closed.",
+  "timeZone": "America/Los_Angeles",
+  "weeklyHours": {
+    "0": null,
+    "1": null,
+    "2": { "opens": "09:00", "closes": "19:00" },
+    "3": { "opens": "09:00", "closes": "19:00" },
+    "4": { "opens": "09:00", "closes": "20:00" },
+    "5": { "opens": "09:00", "closes": "19:00" },
+    "6": { "opens": "09:00", "closes": "17:00" }
+  },
+  "sameDayReplyMin": 15,
+  "minLaterReplyMin": 15
+}

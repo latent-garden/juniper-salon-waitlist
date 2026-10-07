@@ -1,0 +1,186 @@
+/* Juniper Salon staff design system: warm cream, dusty sage, rosewood and walnut; Goudy display, Figtree UI.
+   Spacing scale: 4 · 8 · 12 · 16 · 24 · 32 · 48. Optical exceptions: 2–3px rules and markers, 46px buttons. */
+:root {
+  --cream: #f3e9d7;
+  --ink: #2f2a22;
+  --pencil: #6b604f;
+  --rule: #dccbae;
+  --sage: #9aae90;
+  --sage-tint: #dee0cf;   /* muted, dusty attention surface */
+  --sage-line: #cbcdb9;
+  --sage-ink: #43563d;
+  --rose: #6b2a1f;        /* reserved: "held for someone" */
+  --walnut: #7a4f33;
+  --terracotta: #b4553b;  /* reserved: staff attention */
+
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--cream); color: var(--ink); font: 400 15px/1.5 "Figtree", system-ui, sans-serif; }
+p, h1, h2, h3 { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--sage-ink); outline-offset: 2px; }
+.display { font-family: "Goudy Bookletter 1911", Georgia, serif; font-weight: 400; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.page { max-width: 1160px; margin: 0 auto; padding: 0 var(--s-7) var(--s-7); }
+
+/* Header */
+.top { display: flex; align-items: center; justify-content: space-between; padding: var(--s-5) 0 var(--s-4); border-bottom: 3px solid var(--sage); }
+.brand { display: flex; align-items: baseline; gap: var(--s-3); }
+.wordmark { font-size: 32px; line-height: 1; color: var(--rose); letter-spacing: 0.01em; text-decoration: none; }
+/* The handwritten accent: once per screen, beside the wordmark in the header, on every staff screen. */
+.accent { font-family: "La Belle Aurore", cursive; font-size: 19px; color: var(--sage-ink); transform: rotate(-3deg) translateY(-2px); }
+.top nav { display: flex; gap: var(--s-5); font-weight: 500; }
+.top nav a { text-decoration: none; padding: var(--s-3) 0; }
+.top nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.top nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--sage-ink); text-decoration-thickness: 2px; text-underline-offset: 7px; }
+
+/* Title area: title + (date and main action on one row) | derived summary */
+.head { display: grid; grid-template-columns: 1fr minmax(0, 460px); gap: var(--s-7); align-items: end; padding: var(--s-6) 0; }
+h1 { font-size: 48px; line-height: 1; }
+.meta { display: flex; align-items: center; gap: var(--s-4); margin-top: var(--s-2); min-height: 46px; }
+.date { color: var(--walnut); font-weight: 600; font-size: 15px; }
+.summary { padding-left: var(--s-4); border-left: 2px solid var(--sage); font-size: 18px; line-height: 1.5; text-wrap: pretty; }
+.summary b { font-weight: 600; }
+
+/* Body */
+/* When a screen's body opens directly with a list heading (Openings), give the title block 16 more air.
+   Applied to the whole body so the attention panel stays aligned with the first list heading. */
+.body--list-first { margin-top: var(--s-4); }
+.body { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: var(--s-7); align-items: start; }
+h2 { font-size: 26px; line-height: 1.1; }
+/* Day / group headings: Goudy 22 for full lists (Openings, Waitlist); 13px walnut label for short previews (Home). */
+.list-heading { font-size: 22px; line-height: 1.2; margin: 40px 0 var(--s-2); } /* optical: 40 between list sections */
+.list-heading:first-child { margin-top: 0; }
+.list-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--s-4); margin: 0 0 var(--s-2); }
+.list-head .list-heading { margin: 0; }
+/* Create action for a collection: the existing small (40px) secondary button, raised so the
+   heading row keeps its height; invisible 2px extension gives a 44px target. */
+.list-head .button { position: relative; margin-top: -14px; flex: none; }
+.list-head--note { align-items: center; margin-bottom: var(--s-3); }
+.list-head--note .list-note { margin: var(--s-2) 0 0; }
+.list-head--note .button { margin-top: 0; }
+.list-head .button { border-width: 1px; border-color: #7f8a73; font-weight: 500; } /* softened collection action; border 3.0:1 */
+.list-head .button:hover { border-color: var(--sage-ink); }
+.list-head .button::after { content: ""; position: absolute; inset: -3px 0; }
+.button:hover { background: var(--sage-tint); }
+.button-primary:hover { background: #3a4b35; }
+.day-label { margin-top: var(--s-5); padding-bottom: var(--s-2); font-weight: 600; font-size: 13px; color: var(--walnut); }
+.list-note { margin: 0 0 var(--s-3); color: var(--pencil); font-size: 14px; }
+
+/* Operational list */
+.slots { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.slot { position: relative; display: grid; grid-template-columns: 84px 1fr auto; gap: var(--s-4); align-items: baseline; padding: var(--s-3) 0 var(--s-3) var(--s-4); border-bottom: 1px solid var(--rule); }
+.slot.is-held::before { content: ""; position: absolute; left: 0; top: var(--s-3); bottom: var(--s-3); width: 3px; border-radius: 2px; background: var(--rose); }
+.time { font-weight: 600; font-size: 16px; font-variant-numeric: tabular-nums; }
+.what { font-size: 16px; }
+.what b { font-weight: 600; }
+.what small { display: block; color: var(--pencil); font-size: 14px; }
+.booked { color: var(--sage-ink); font-weight: 600; }
+.slot.is-unfilled .time, .slot.is-unfilled .what { color: var(--pencil); font-weight: 400; }
+/* Row action: 44px hit area without changing how it looks. */
+.act { display: inline-block; padding: var(--s-3) 0; margin: calc(-1 * var(--s-3)) 0; font-weight: 600; font-size: 14px; color: var(--sage-ink); white-space: nowrap; }
+
+/* Attention panel: the one tinted panel per screen; owns the Square reminder. */
+.needs { background: var(--sage-tint); padding: var(--s-5); border-top: 3px solid var(--terracotta); }
+.needs .sub { margin-top: var(--s-1); color: var(--pencil); font-size: 14px; }
+.needs ul { list-style: none; margin: var(--s-3) 0 0; padding: 0; }
+.needs li { padding: var(--s-4) 0; border-top: 1px solid var(--sage-line); }
+.needs li:last-child { padding-bottom: 0; }
+.needs li p { font-weight: 500; }
+.needs li small { display: block; color: var(--pencil); font-weight: 400; font-size: 13px; }
+.needs .button { margin-top: var(--s-2); }
+
+/* Plain explanatory block (no tint) */
+.how { margin-top: var(--s-7); max-width: 720px; border-top: 1px solid var(--rule); padding-top: var(--s-4); }
+.how h2 { font-size: 22px; }
+.how p { margin-top: var(--s-2); color: var(--pencil); }
+.how p b { color: var(--ink); font-weight: 600; }
+
+/* Buttons */
+.button { display: inline-flex; align-items: center; min-height: 40px; padding: 0 var(--s-4); border-radius: 3px; font: 600 14px "Figtree"; border: 1.5px solid var(--sage-ink); color: var(--sage-ink); background: transparent; cursor: pointer; text-decoration: none; }
+.button-primary, .button-quiet { min-height: 46px; padding: 0 var(--s-5); font-size: 15px; }
+.button-primary { background: var(--sage-ink); color: var(--cream); }
+.button-quiet { border-color: var(--ink); color: var(--ink); }
+.next { display: flex; gap: var(--s-3); margin-top: var(--s-6); }
+
+footer { margin-top: var(--s-7); padding-top: var(--s-4); border-top: 1px solid var(--rule); color: var(--pencil); font-size: 13px; }
+
+/* ======================================================================
+   App-only additions: form controls, notes, empty states, staff actions
+   and responsive rules.
+   ====================================================================== */
+
+/* Respect the hidden attribute on buttons (their display: inline-flex would otherwise win). */
+.button[hidden] { display: none; }
+/* A <button> in the existing row-action (link) language, e.g. "Include for this opening". */
+.act-button { margin-left: var(--s-1); background: none; border: 0; padding-left: 0; padding-right: 0; font-family: inherit; line-height: 20px; text-decoration: underline; cursor: pointer; } /* 20 + 2×12 = 44px target */
+.act-button:disabled { cursor: default; opacity: 0.6; }
+/* The Needs attention button is the small 40px secondary; an invisible extension gives a 44px target. */
+.needs .button { position: relative; }
+.needs .button::after { content: ""; position: absolute; inset: -3px 0; }
+
+.pencil { color: var(--pencil); }
+.error { color: var(--brick, #9a3f31); }
+.empty-note { margin-top: var(--s-3); color: var(--pencil); }
+
+/* Needs attention: honest about what Juniper can't see (real product state). */
+.needs .panel-note { margin-top: var(--s-4); padding-top: var(--s-3); border-top: 1px solid var(--sage-line); color: var(--pencil); font-size: 13px; }
+
+/* Add-opening dialog: same system (cream surface, sage rule,
+   Goudy title, Figtree fields, 44px controls). No shadow or blur; a restrained ink-tinted backdrop. */
+.add-dialog {
+  width: min(560px, calc(100vw - 32px)); max-width: none; padding: var(--s-5);
+  border: 1px solid var(--rule); border-top: 3px solid var(--sage); border-radius: 4px;
+  background: var(--cream); color: var(--ink);
+}
+.add-dialog::backdrop { background: rgba(47, 42, 34, 0.32); }
+html:has(.add-dialog[open]) { overflow: hidden; }
+.add-dialog h2 { font-size: 26px; line-height: 1.1; margin-bottom: var(--s-4); }
+.add-form .fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-4) var(--s-3); margin-bottom: var(--s-5); }
+.field { display: grid; gap: var(--s-2); }
+.field label { font-size: 13px; font-weight: 600; color: var(--walnut); }
+.field input, .field select {
+  min-height: 44px; padding: 0 14px; border: 1px solid #7f8a73; border-radius: 3px;
+  background-color: #fbf8f1; color: var(--ink); font: 400 15px "Figtree", system-ui, sans-serif; accent-color: var(--sage-ink);
+}
+/* Selects: replace the native arrow (which ignores padding and hugs the border) with a chevron
+   inset 14px from the edge, like the date/time icons. 32px right padding keeps the longest
+   option ("1 hour 30 minutes") unclipped at 390px. */
+.field select {
+  appearance: none; -webkit-appearance: none; padding-right: 32px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%236b604f' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center; background-size: 10px 6px;
+}
+/* Date/time: native calendar and clock icons sit at the 14px inset with a little air before them. */
+.field input::-webkit-calendar-picker-indicator { margin-left: var(--s-2); cursor: pointer; }
+.form-actions { display: flex; flex-wrap: wrap; gap: var(--s-3); align-items: center; }
+.form-error { margin: calc(-1 * var(--s-3)) 0 var(--s-4); font-size: 14px; }
+.form-error:empty { display: none; }
+.form-result { margin: var(--s-2) 0 0; font-size: 14px; color: var(--pencil); }
+.form-result:empty { display: none; }
+
+/* ---- Responsive: verified at 390px ---- */
+@media (max-width: 899px) {
+  .head { grid-template-columns: 1fr; gap: var(--s-4); align-items: start; }
+  .body { grid-template-columns: 1fr; gap: var(--s-5); }
+  .body .needs { order: -1; }
+}
+@media (max-width: 719px) {
+  .page { padding: 0 var(--s-4) var(--s-6); }
+  .top { flex-wrap: wrap; gap: var(--s-2) var(--s-4); }
+  .brand { flex-wrap: wrap; }
+  h1 { font-size: 40px; }
+  .head { padding: var(--s-5) 0; }
+  .list-head { flex-wrap: wrap; align-items: center; row-gap: var(--s-2); }
+  .list-head .button { margin-top: 0; }
+  .slot { grid-template-columns: 76px 1fr; }
+  .slot .act { grid-column: 2; justify-self: start; }
+}
+ /* Phone: the dialog becomes a bottom sheet in the same visual language. */
+@media (max-width: 719px) {
+  .add-dialog { max-height: calc(100dvh - 16px); overflow-y: auto; overscroll-behavior: contain; width: 100%; margin: auto 0 0; padding: var(--s-5) var(--s-4) calc(var(--s-5) + env(safe-area-inset-bottom)); border-radius: 8px 8px 0 0; border-bottom: 0; }
+  .add-dialog .form-actions .button { flex: 1; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

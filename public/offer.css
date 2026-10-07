@@ -1,0 +1,42 @@
+/* Client offer note.
+   Tokens, type roles and buttons come from juniper.css. One narrow note column, read top to bottom;
+   no staff chrome, no handwritten accent (staff-only). */
+.note { max-width: 480px; margin: 0 auto; padding: 0 var(--s-5) var(--s-7); }
+.note-top { padding: var(--s-6) 0 var(--s-4); border-bottom: 3px solid var(--sage); }
+.note-top .wordmark { font-size: 28px; }
+
+.note h1 { margin-top: var(--s-6); font-size: 40px; line-height: 1.1; }
+.note h1:focus { outline: none; }
+.lead { margin-top: var(--s-3); font-size: 18px; line-height: 1.5; text-wrap: pretty; }
+
+/* The appointment: the one bordered surface (same surface language as the Add opening dialog). */
+.appointment { margin-top: var(--s-5); padding: var(--s-5); border: 1px solid var(--rule); border-top: 3px solid var(--sage); border-radius: 4px; }
+.appt-day { color: var(--walnut); font-weight: 600; font-size: 15px; }
+.appt-time { margin-top: var(--s-1); font-size: 56px; line-height: 1; }
+.appt-what { margin-top: var(--s-3); font-size: 18px; font-weight: 500; }
+.appt-length { color: var(--pencil); }
+
+/* The hold: the rosewood "held" marker, used for exactly what it means everywhere else. */
+.hold { position: relative; margin-top: var(--s-5); padding-left: var(--s-4); font-size: 17px; }
+.hold b { font-weight: 600; }
+.hold::before { content: ""; position: absolute; left: 0; top: 2px; bottom: 2px; width: 3px; border-radius: 2px; background: var(--rose); }
+
+/* Two answers of equal size. */
+.answers { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3); margin-top: var(--s-5); }
+.answers .button { justify-content: center; width: 100%; padding: 0 var(--s-3); }
+.answers .button:disabled { cursor: default; opacity: 0.7; }
+.reassure { margin-top: var(--s-4); color: var(--pencil); font-size: 15px; text-wrap: pretty; }
+.problem:empty { display: none; }
+.problem { margin-top: var(--s-3); font-weight: 500; }
+
+.check { color: var(--sage-ink); }
+.note footer { margin-top: var(--s-7); }
+
+@media (max-width: 719px) {
+  .note { padding: 0 var(--s-4) var(--s-6); }
+  .note-top { padding-top: var(--s-5); }
+  .note h1 { margin-top: var(--s-5); font-size: 34px; }
+  .lead { font-size: 17px; }
+  .appt-time { font-size: 48px; }
+}
+@media (max-width: 359px) { .answers { grid-template-columns: 1fr; } }

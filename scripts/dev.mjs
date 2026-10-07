@@ -48,7 +48,7 @@ for (const child of children) {
     }
   });
 }
-console.log("\nStarter is launching:");
+console.log("\nJuniper is launching:");
 console.log("  App:         http://localhost:3000");
 console.log("  Temporal UI: http://localhost:8233\n");
 

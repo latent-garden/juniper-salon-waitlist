@@ -1,0 +1,1313 @@
+{
+  "events": [
+    {
+      "eventId": "1",
+      "eventTime": "2026-10-07T02:04:21.563981980Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_STARTED",
+      "taskId": "1049262",
+      "workflowExecutionStartedEventAttributes": {
+        "workflowType": {
+          "name": "salonWaitlistWorkflow"
+        },
+        "taskQueue": {
+          "name": "juniper-waitlist",
+          "kind": "TASK_QUEUE_KIND_NORMAL"
+        },
+        "input": {
+          "payloads": [
+            {
+              "metadata": {
+                "encoding": "anNvbi9wbGFpbg=="
+              },
+              "data": "eyJwb2xpY3kiOnsidGltZVpvbmUiOiJBbWVyaWNhL0xvc19BbmdlbGVzIiwic2FtZURheVJlcGx5TXMiOjYwMDAwLCJtaW5MYXRlclJlcGx5TXMiOjkwMDAwMCwic2VydmljZU1pbnV0ZXMiOnsiaGFpcmN1dCI6NDUsImJsb3dvdXQiOjQ1LCJjb2xvciI6MTIwfX19"
+            }
+          ]
+        },
+        "workflowTaskTimeout": "10s",
+        "originalExecutionRunId": "01a1141a-c6bb-7efa-b111-049bbba11449",
+        "identity": "juniper-dev-worker",
+        "firstExecutionRunId": "01a1141a-c6bb-7efa-b111-049bbba11449",
+        "attempt": 1,
+        "firstWorkflowTaskBackoff": "0s",
+        "header": {},
+        "workflowId": "juniper-waitlist"
+      }
+    },
+    {
+      "eventId": "2",
+      "eventTime": "2026-10-07T02:04:21.564037729Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1049263",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "juniper-waitlist",
+          "kind": "TASK_QUEUE_KIND_NORMAL"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "3",
+      "eventTime": "2026-10-07T02:04:22.472261968Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1049267",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "2",
+        "identity": "juniper-dev-worker",
+        "requestId": "0343c880-06ec-4132-9090-b6b61172fdeb",
+        "historySizeBytes": "449",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        }
+      }
+    },
+    {
+      "eventId": "4",
+      "eventTime": "2026-10-07T02:04:22.518460037Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1049271",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "2",
+        "startedEventId": "3",
+        "identity": "juniper-dev-worker",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        },
+        "sdkMetadata": {
+          "coreUsedFlags": [
+            2,
+            3,
+            1
+          ],
+          "sdkName": "temporal-typescript",
+          "sdkVersion": "1.24.0"
+        },
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "5",
+      "eventTime": "2026-10-07T02:04:31.230586867Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1049278",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "juniper-dev-worker-276e817757e14edbaed832d011b15bcd",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "juniper-waitlist"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "6",
+      "eventTime": "2026-10-07T02:04:31.231032608Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1049279",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "5",
+        "identity": "juniper-dev-worker",
+        "requestId": "e3d4f111-46de-4450-ba7e-23bbe2495430",
+        "historySizeBytes": "834",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        }
+      }
+    },
+    {
+      "eventId": "7",
+      "eventTime": "2026-10-07T02:04:31.237657141Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1049280",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "5",
+        "startedEventId": "6",
+        "identity": "juniper-dev-worker",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "8",
+      "eventTime": "2026-10-07T02:04:31.237777222Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_ACCEPTED",
+      "taskId": "1049281",
+      "workflowExecutionUpdateAcceptedEventAttributes": {
+        "protocolInstanceId": "07453163-83a7-4251-b741-2c9ba736f432",
+        "acceptedRequestMessageId": "07453163-83a7-4251-b741-2c9ba736f432/request",
+        "acceptedRequestSequencingEventId": "5",
+        "acceptedRequest": {
+          "meta": {
+            "updateId": "07453163-83a7-4251-b741-2c9ba736f432",
+            "identity": "juniper-dev-worker"
+          },
+          "input": {
+            "header": {},
+            "name": "addClient",
+            "args": {
+              "payloads": [
+                {
+                  "metadata": {
+                    "encoding": "anNvbi9wbGFpbg=="
+                  },
+                  "data": "eyJuYW1lIjoiQ2hsb2UgUGFyayIsIm1vYmlsZSI6Iig1NTUpIDAxMC0yMjMxIiwic2VydmljZSI6ImNvbG9yIiwic3R5bGlzdFByZWZlcmVuY2UiOnsia2luZCI6InJlcXVpcmVzIiwic3R5bGlzdCI6Ik1hcmlhIn0sImF2YWlsYWJpbGl0eSI6W3sid2Vla2RheSI6MCwic3RhcnQiOiIxMDowMCIsImVuZCI6IjE2OjAwIn0seyJ3ZWVrZGF5IjoxLCJzdGFydCI6IjEwOjAwIiwiZW5kIjoiMTY6MDAifSx7IndlZWtkYXkiOjIsInN0YXJ0IjoiMTA6MDAiLCJlbmQiOiIxNjowMCJ9LHsid2Vla2RheSI6Mywic3RhcnQiOiIxMDowMCIsImVuZCI6IjE2OjAwIn0seyJ3ZWVrZGF5Ijo0LCJzdGFydCI6IjEwOjAwIiwiZW5kIjoiMTY6MDAifSx7IndlZWtkYXkiOjUsInN0YXJ0IjoiMTA6MDAiLCJlbmQiOiIxNjowMCJ9LHsid2Vla2RheSI6Niwic3RhcnQiOiIxMDowMCIsImVuZCI6IjE2OjAwIn1dLCJqb2luZWRBdCI6IjIwMjYtMDgtMjhUMTc6MDA6MDAuMDAwWiJ9"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "eventId": "9",
+      "eventTime": "2026-10-07T02:04:31.237825679Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_COMPLETED",
+      "taskId": "1049282",
+      "workflowExecutionUpdateCompletedEventAttributes": {
+        "meta": {
+          "updateId": "07453163-83a7-4251-b741-2c9ba736f432",
+          "identity": "juniper-dev-worker"
+        },
+        "acceptedEventId": "8",
+        "outcome": {
+          "success": {
+            "payloads": [
+              {
+                "metadata": {
+                  "encoding": "anNvbi9wbGFpbg=="
+                },
+                "data": "eyJjbGllbnRJZCI6ImNsaWVudC0xIiwic2VxIjoxLCJuYW1lIjoiQ2hsb2UgUGFyayIsIm1vYmlsZSI6Iig1NTUpIDAxMC0yMjMxIiwic2VydmljZSI6ImNvbG9yIiwic3R5bGlzdFByZWZlcmVuY2UiOnsia2luZCI6InJlcXVpcmVzIiwic3R5bGlzdCI6Ik1hcmlhIn0sImF2YWlsYWJpbGl0eSI6W3sid2Vla2RheSI6MCwic3RhcnQiOiIxMDowMCIsImVuZCI6IjE2OjAwIn0seyJ3ZWVrZGF5IjoxLCJzdGFydCI6IjEwOjAwIiwiZW5kIjoiMTY6MDAifSx7IndlZWtkYXkiOjIsInN0YXJ0IjoiMTA6MDAiLCJlbmQiOiIxNjowMCJ9LHsid2Vla2RheSI6Mywic3RhcnQiOiIxMDowMCIsImVuZCI6IjE2OjAwIn0seyJ3ZWVrZGF5Ijo0LCJzdGFydCI6IjEwOjAwIiwiZW5kIjoiMTY6MDAifSx7IndlZWtkYXkiOjUsInN0YXJ0IjoiMTA6MDAiLCJlbmQiOiIxNjowMCJ9LHsid2Vla2RheSI6Niwic3RhcnQiOiIxMDowMCIsImVuZCI6IjE2OjAwIn1dLCJqb2luZWRBdCI6IjIwMjYtMDgtMjhUMTc6MDA6MDAuMDAwWiIsInN0YXR1cyI6IndhaXRpbmciLCJzZXJ2aWNlTWludXRlcyI6MTIwfQ=="
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "eventId": "10",
+      "eventTime": "2026-10-07T02:04:31.246503255Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1049289",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "juniper-dev-worker-276e817757e14edbaed832d011b15bcd",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "juniper-waitlist"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "11",
+      "eventTime": "2026-10-07T02:04:31.246863039Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1049290",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "10",
+        "identity": "juniper-dev-worker",
+        "requestId": "a7f21789-b0d7-4278-9b6a-cc7601fed2fb",
+        "historySizeBytes": "2707",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        }
+      }
+    },
+    {
+      "eventId": "12",
+      "eventTime": "2026-10-07T02:04:31.250218930Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1049291",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "10",
+        "startedEventId": "11",
+        "identity": "juniper-dev-worker",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "13",
+      "eventTime": "2026-10-07T02:04:31.250290803Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_ACCEPTED",
+      "taskId": "1049292",
+      "workflowExecutionUpdateAcceptedEventAttributes": {
+        "protocolInstanceId": "46f28f1b-5455-43c3-a207-65eb75dba295",
+        "acceptedRequestMessageId": "46f28f1b-5455-43c3-a207-65eb75dba295/request",
+        "acceptedRequestSequencingEventId": "10",
+        "acceptedRequest": {
+          "meta": {
+            "updateId": "46f28f1b-5455-43c3-a207-65eb75dba295",
+            "identity": "juniper-dev-worker"
+          },
+          "input": {
+            "header": {},
+            "name": "addClient",
+            "args": {
+              "payloads": [
+                {
+                  "metadata": {
+                    "encoding": "anNvbi9wbGFpbg=="
+                  },
+                  "data": "eyJuYW1lIjoiWm9lIFdhbHNoIiwibW9iaWxlIjoiKDU1NSkgMDEwLTQ0MTciLCJzZXJ2aWNlIjoiaGFpcmN1dCIsInN0eWxpc3RQcmVmZXJlbmNlIjp7ImtpbmQiOiJyZXF1aXJlcyIsInN0eWxpc3QiOiJKbyJ9LCJhdmFpbGFiaWxpdHkiOlt7IndlZWtkYXkiOjAsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6MSwic3RhcnQiOiIwOTowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5IjoyLCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjMsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6NCwic3RhcnQiOiIwOTowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5Ijo1LCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjYsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9XSwiam9pbmVkQXQiOiIyMDI2LTA5LTAxVDE2OjMwOjAwLjAwMFoifQ=="
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "eventId": "14",
+      "eventTime": "2026-10-07T02:04:31.250315886Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_COMPLETED",
+      "taskId": "1049293",
+      "workflowExecutionUpdateCompletedEventAttributes": {
+        "meta": {
+          "updateId": "46f28f1b-5455-43c3-a207-65eb75dba295",
+          "identity": "juniper-dev-worker"
+        },
+        "acceptedEventId": "13",
+        "outcome": {
+          "success": {
+            "payloads": [
+              {
+                "metadata": {
+                  "encoding": "anNvbi9wbGFpbg=="
+                },
+                "data": "eyJjbGllbnRJZCI6ImNsaWVudC0yIiwic2VxIjoyLCJuYW1lIjoiWm9lIFdhbHNoIiwibW9iaWxlIjoiKDU1NSkgMDEwLTQ0MTciLCJzZXJ2aWNlIjoiaGFpcmN1dCIsInN0eWxpc3RQcmVmZXJlbmNlIjp7ImtpbmQiOiJyZXF1aXJlcyIsInN0eWxpc3QiOiJKbyJ9LCJhdmFpbGFiaWxpdHkiOlt7IndlZWtkYXkiOjAsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6MSwic3RhcnQiOiIwOTowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5IjoyLCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjMsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6NCwic3RhcnQiOiIwOTowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5Ijo1LCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjYsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9XSwiam9pbmVkQXQiOiIyMDI2LTA5LTAxVDE2OjMwOjAwLjAwMFoiLCJzdGF0dXMiOiJ3YWl0aW5nIiwic2VydmljZU1pbnV0ZXMiOjQ1fQ=="
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "eventId": "15",
+      "eventTime": "2026-10-07T02:04:31.258728300Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1049300",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "juniper-dev-worker-276e817757e14edbaed832d011b15bcd",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "juniper-waitlist"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "16",
+      "eventTime": "2026-10-07T02:04:31.259114875Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1049301",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "15",
+        "identity": "juniper-dev-worker",
+        "requestId": "02c2e158-b3fc-4654-a5bb-2d788258eb69",
+        "historySizeBytes": "4575",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        }
+      }
+    },
+    {
+      "eventId": "17",
+      "eventTime": "2026-10-07T02:04:31.262502557Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1049302",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "15",
+        "startedEventId": "16",
+        "identity": "juniper-dev-worker",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "18",
+      "eventTime": "2026-10-07T02:04:31.262593972Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_ACCEPTED",
+      "taskId": "1049303",
+      "workflowExecutionUpdateAcceptedEventAttributes": {
+        "protocolInstanceId": "b01b1ff3-90be-4d32-ad96-17e3c88227db",
+        "acceptedRequestMessageId": "b01b1ff3-90be-4d32-ad96-17e3c88227db/request",
+        "acceptedRequestSequencingEventId": "15",
+        "acceptedRequest": {
+          "meta": {
+            "updateId": "b01b1ff3-90be-4d32-ad96-17e3c88227db",
+            "identity": "juniper-dev-worker"
+          },
+          "input": {
+            "header": {},
+            "name": "addClient",
+            "args": {
+              "payloads": [
+                {
+                  "metadata": {
+                    "encoding": "anNvbi9wbGFpbg=="
+                  },
+                  "data": "eyJuYW1lIjoiQXZhIENoZW4iLCJtb2JpbGUiOiIoNTU1KSAwMTAtMzM3OCIsInNlcnZpY2UiOiJoYWlyY3V0Iiwic3R5bGlzdFByZWZlcmVuY2UiOnsia2luZCI6ImFueSJ9LCJhdmFpbGFiaWxpdHkiOlt7IndlZWtkYXkiOjAsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6MSwic3RhcnQiOiIwOTowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5IjoyLCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjMsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6NCwic3RhcnQiOiIwOTowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5Ijo1LCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjYsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9XSwiam9pbmVkQXQiOiIyMDI2LTA5LTAyVDE4OjE1OjAwLjAwMFoifQ=="
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "eventId": "19",
+      "eventTime": "2026-10-07T02:04:31.262617555Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_COMPLETED",
+      "taskId": "1049304",
+      "workflowExecutionUpdateCompletedEventAttributes": {
+        "meta": {
+          "updateId": "b01b1ff3-90be-4d32-ad96-17e3c88227db",
+          "identity": "juniper-dev-worker"
+        },
+        "acceptedEventId": "18",
+        "outcome": {
+          "success": {
+            "payloads": [
+              {
+                "metadata": {
+                  "encoding": "anNvbi9wbGFpbg=="
+                },
+                "data": "eyJjbGllbnRJZCI6ImNsaWVudC0zIiwic2VxIjozLCJuYW1lIjoiQXZhIENoZW4iLCJtb2JpbGUiOiIoNTU1KSAwMTAtMzM3OCIsInNlcnZpY2UiOiJoYWlyY3V0Iiwic3R5bGlzdFByZWZlcmVuY2UiOnsia2luZCI6ImFueSJ9LCJhdmFpbGFiaWxpdHkiOlt7IndlZWtkYXkiOjAsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6MSwic3RhcnQiOiIwOTowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5IjoyLCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjMsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6NCwic3RhcnQiOiIwOTowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5Ijo1LCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjYsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9XSwiam9pbmVkQXQiOiIyMDI2LTA5LTAyVDE4OjE1OjAwLjAwMFoiLCJzdGF0dXMiOiJ3YWl0aW5nIiwic2VydmljZU1pbnV0ZXMiOjQ1fQ=="
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "eventId": "20",
+      "eventTime": "2026-10-07T02:04:31.270475647Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1049311",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "juniper-dev-worker-276e817757e14edbaed832d011b15bcd",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "juniper-waitlist"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "21",
+      "eventTime": "2026-10-07T02:04:31.270797015Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1049312",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "20",
+        "identity": "juniper-dev-worker",
+        "requestId": "66e2b0b7-f0db-4353-a581-0ed3c7b64c1f",
+        "historySizeBytes": "6401",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        }
+      }
+    },
+    {
+      "eventId": "22",
+      "eventTime": "2026-10-07T02:04:31.273961576Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1049313",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "20",
+        "startedEventId": "21",
+        "identity": "juniper-dev-worker",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "23",
+      "eventTime": "2026-10-07T02:04:31.274025075Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_ACCEPTED",
+      "taskId": "1049314",
+      "workflowExecutionUpdateAcceptedEventAttributes": {
+        "protocolInstanceId": "e1094e45-d540-4974-87b7-81d1090de4ed",
+        "acceptedRequestMessageId": "e1094e45-d540-4974-87b7-81d1090de4ed/request",
+        "acceptedRequestSequencingEventId": "20",
+        "acceptedRequest": {
+          "meta": {
+            "updateId": "e1094e45-d540-4974-87b7-81d1090de4ed",
+            "identity": "juniper-dev-worker"
+          },
+          "input": {
+            "header": {},
+            "name": "addClient",
+            "args": {
+              "payloads": [
+                {
+                  "metadata": {
+                    "encoding": "anNvbi9wbGFpbg=="
+                  },
+                  "data": "eyJuYW1lIjoiQmVuIE9ydGl6IiwibW9iaWxlIjoiKDU1NSkgMDEwLTU5MDIiLCJzZXJ2aWNlIjoiaGFpcmN1dCIsInN0eWxpc3RQcmVmZXJlbmNlIjp7ImtpbmQiOiJwcmVmZXJzIiwic3R5bGlzdCI6Ik1hcmlhIn0sImF2YWlsYWJpbGl0eSI6W3sid2Vla2RheSI6MCwic3RhcnQiOiIxMjowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5IjoxLCJzdGFydCI6IjEyOjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjIsInN0YXJ0IjoiMTI6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6Mywic3RhcnQiOiIxMjowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5Ijo0LCJzdGFydCI6IjEyOjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjUsInN0YXJ0IjoiMTI6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6Niwic3RhcnQiOiIxMjowMCIsImVuZCI6IjE5OjAwIn1dLCJqb2luZWRBdCI6IjIwMjYtMDktMDhUMTU6NDU6MDAuMDAwWiJ9"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "eventId": "24",
+      "eventTime": "2026-10-07T02:04:31.274045033Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_COMPLETED",
+      "taskId": "1049315",
+      "workflowExecutionUpdateCompletedEventAttributes": {
+        "meta": {
+          "updateId": "e1094e45-d540-4974-87b7-81d1090de4ed",
+          "identity": "juniper-dev-worker"
+        },
+        "acceptedEventId": "23",
+        "outcome": {
+          "success": {
+            "payloads": [
+              {
+                "metadata": {
+                  "encoding": "anNvbi9wbGFpbg=="
+                },
+                "data": "eyJjbGllbnRJZCI6ImNsaWVudC00Iiwic2VxIjo0LCJuYW1lIjoiQmVuIE9ydGl6IiwibW9iaWxlIjoiKDU1NSkgMDEwLTU5MDIiLCJzZXJ2aWNlIjoiaGFpcmN1dCIsInN0eWxpc3RQcmVmZXJlbmNlIjp7ImtpbmQiOiJwcmVmZXJzIiwic3R5bGlzdCI6Ik1hcmlhIn0sImF2YWlsYWJpbGl0eSI6W3sid2Vla2RheSI6MCwic3RhcnQiOiIxMjowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5IjoxLCJzdGFydCI6IjEyOjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjIsInN0YXJ0IjoiMTI6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6Mywic3RhcnQiOiIxMjowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5Ijo0LCJzdGFydCI6IjEyOjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjUsInN0YXJ0IjoiMTI6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6Niwic3RhcnQiOiIxMjowMCIsImVuZCI6IjE5OjAwIn1dLCJqb2luZWRBdCI6IjIwMjYtMDktMDhUMTU6NDU6MDAuMDAwWiIsInN0YXR1cyI6IndhaXRpbmciLCJzZXJ2aWNlTWludXRlcyI6NDV9"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "eventId": "25",
+      "eventTime": "2026-10-07T02:04:31.281259304Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1049322",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "juniper-dev-worker-276e817757e14edbaed832d011b15bcd",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "juniper-waitlist"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "26",
+      "eventTime": "2026-10-07T02:04:31.281597797Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1049323",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "25",
+        "identity": "juniper-dev-worker",
+        "requestId": "0d850e5b-c21f-43b9-853e-cf891d4b57c1",
+        "historySizeBytes": "8278",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        }
+      }
+    },
+    {
+      "eventId": "27",
+      "eventTime": "2026-10-07T02:04:31.284777150Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1049324",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "25",
+        "startedEventId": "26",
+        "identity": "juniper-dev-worker",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "28",
+      "eventTime": "2026-10-07T02:04:31.284867648Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_ACCEPTED",
+      "taskId": "1049325",
+      "workflowExecutionUpdateAcceptedEventAttributes": {
+        "protocolInstanceId": "9386731c-f5a5-4a36-ac9c-2982b1bdd287",
+        "acceptedRequestMessageId": "9386731c-f5a5-4a36-ac9c-2982b1bdd287/request",
+        "acceptedRequestSequencingEventId": "25",
+        "acceptedRequest": {
+          "meta": {
+            "updateId": "9386731c-f5a5-4a36-ac9c-2982b1bdd287",
+            "identity": "juniper-dev-worker"
+          },
+          "input": {
+            "header": {},
+            "name": "addClient",
+            "args": {
+              "payloads": [
+                {
+                  "metadata": {
+                    "encoding": "anNvbi9wbGFpbg=="
+                  },
+                  "data": "eyJuYW1lIjoiRGV2IFBhdGVsIiwibW9iaWxlIjoiKDU1NSkgMDEwLTY2NDQiLCJzZXJ2aWNlIjoiYmxvd291dCIsInN0eWxpc3RQcmVmZXJlbmNlIjp7ImtpbmQiOiJwcmVmZXJzIiwic3R5bGlzdCI6IkpvIn0sImF2YWlsYWJpbGl0eSI6W3sid2Vla2RheSI6MCwic3RhcnQiOiIwOTowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5IjoxLCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjIsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6Mywic3RhcnQiOiIwOTowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5Ijo0LCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjUsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6Niwic3RhcnQiOiIwOTowMCIsImVuZCI6IjE5OjAwIn1dLCJqb2luZWRBdCI6IjIwMjYtMDktMTVUMTk6MjA6MDAuMDAwWiJ9"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "eventId": "29",
+      "eventTime": "2026-10-07T02:04:31.284896023Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_COMPLETED",
+      "taskId": "1049326",
+      "workflowExecutionUpdateCompletedEventAttributes": {
+        "meta": {
+          "updateId": "9386731c-f5a5-4a36-ac9c-2982b1bdd287",
+          "identity": "juniper-dev-worker"
+        },
+        "acceptedEventId": "28",
+        "outcome": {
+          "success": {
+            "payloads": [
+              {
+                "metadata": {
+                  "encoding": "anNvbi9wbGFpbg=="
+                },
+                "data": "eyJjbGllbnRJZCI6ImNsaWVudC01Iiwic2VxIjo1LCJuYW1lIjoiRGV2IFBhdGVsIiwibW9iaWxlIjoiKDU1NSkgMDEwLTY2NDQiLCJzZXJ2aWNlIjoiYmxvd291dCIsInN0eWxpc3RQcmVmZXJlbmNlIjp7ImtpbmQiOiJwcmVmZXJzIiwic3R5bGlzdCI6IkpvIn0sImF2YWlsYWJpbGl0eSI6W3sid2Vla2RheSI6MCwic3RhcnQiOiIwOTowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5IjoxLCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjIsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6Mywic3RhcnQiOiIwOTowMCIsImVuZCI6IjE5OjAwIn0seyJ3ZWVrZGF5Ijo0LCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMTk6MDAifSx7IndlZWtkYXkiOjUsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIxOTowMCJ9LHsid2Vla2RheSI6Niwic3RhcnQiOiIwOTowMCIsImVuZCI6IjE5OjAwIn1dLCJqb2luZWRBdCI6IjIwMjYtMDktMTVUMTk6MjA6MDAuMDAwWiIsInN0YXR1cyI6IndhaXRpbmciLCJzZXJ2aWNlTWludXRlcyI6NDV9"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "eventId": "30",
+      "eventTime": "2026-10-07T02:04:31.314833503Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1049333",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "juniper-dev-worker-276e817757e14edbaed832d011b15bcd",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "juniper-waitlist"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "31",
+      "eventTime": "2026-10-07T02:04:31.315212162Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1049334",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "30",
+        "identity": "juniper-dev-worker",
+        "requestId": "6a9508be-41ac-4f59-af23-ed0afff62814",
+        "historySizeBytes": "10149",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        }
+      }
+    },
+    {
+      "eventId": "32",
+      "eventTime": "2026-10-07T02:04:31.318577094Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1049335",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "30",
+        "startedEventId": "31",
+        "identity": "juniper-dev-worker",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "33",
+      "eventTime": "2026-10-07T02:04:31.318643593Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_ACCEPTED",
+      "taskId": "1049336",
+      "workflowExecutionUpdateAcceptedEventAttributes": {
+        "protocolInstanceId": "30a488b6-5fcf-4704-86b6-25afd4b4843a",
+        "acceptedRequestMessageId": "30a488b6-5fcf-4704-86b6-25afd4b4843a/request",
+        "acceptedRequestSequencingEventId": "30",
+        "acceptedRequest": {
+          "meta": {
+            "updateId": "30a488b6-5fcf-4704-86b6-25afd4b4843a",
+            "identity": "juniper-dev-worker"
+          },
+          "input": {
+            "header": {},
+            "name": "addClient",
+            "args": {
+              "payloads": [
+                {
+                  "metadata": {
+                    "encoding": "anNvbi9wbGFpbg=="
+                  },
+                  "data": "eyJuYW1lIjoiTWlhIExvcGV6IiwibW9iaWxlIjoiKDU1NSkgMDEwLTQ0MTgiLCJzZXJ2aWNlIjoiaGFpcmN1dCIsInN0eWxpc3RQcmVmZXJlbmNlIjp7ImtpbmQiOiJhbnkifSwiYXZhaWxhYmlsaXR5IjpbeyJ3ZWVrZGF5IjowLCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMjE6MDAifSx7IndlZWtkYXkiOjEsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIyMTowMCJ9LHsid2Vla2RheSI6Miwic3RhcnQiOiIwOTowMCIsImVuZCI6IjIxOjAwIn0seyJ3ZWVrZGF5IjozLCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMjE6MDAifSx7IndlZWtkYXkiOjQsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIyMTowMCJ9LHsid2Vla2RheSI6NSwic3RhcnQiOiIwOTowMCIsImVuZCI6IjIxOjAwIn0seyJ3ZWVrZGF5Ijo2LCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMjE6MDAifV0sImpvaW5lZEF0IjoiMjAyNi0wOS0yMFQxNzowMDowMC4wMDBaIn0="
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "eventId": "34",
+      "eventTime": "2026-10-07T02:04:31.318664426Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_COMPLETED",
+      "taskId": "1049337",
+      "workflowExecutionUpdateCompletedEventAttributes": {
+        "meta": {
+          "updateId": "30a488b6-5fcf-4704-86b6-25afd4b4843a",
+          "identity": "juniper-dev-worker"
+        },
+        "acceptedEventId": "33",
+        "outcome": {
+          "success": {
+            "payloads": [
+              {
+                "metadata": {
+                  "encoding": "anNvbi9wbGFpbg=="
+                },
+                "data": "eyJjbGllbnRJZCI6ImNsaWVudC02Iiwic2VxIjo2LCJuYW1lIjoiTWlhIExvcGV6IiwibW9iaWxlIjoiKDU1NSkgMDEwLTQ0MTgiLCJzZXJ2aWNlIjoiaGFpcmN1dCIsInN0eWxpc3RQcmVmZXJlbmNlIjp7ImtpbmQiOiJhbnkifSwiYXZhaWxhYmlsaXR5IjpbeyJ3ZWVrZGF5IjowLCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMjE6MDAifSx7IndlZWtkYXkiOjEsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIyMTowMCJ9LHsid2Vla2RheSI6Miwic3RhcnQiOiIwOTowMCIsImVuZCI6IjIxOjAwIn0seyJ3ZWVrZGF5IjozLCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMjE6MDAifSx7IndlZWtkYXkiOjQsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIyMTowMCJ9LHsid2Vla2RheSI6NSwic3RhcnQiOiIwOTowMCIsImVuZCI6IjIxOjAwIn0seyJ3ZWVrZGF5Ijo2LCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMjE6MDAifV0sImpvaW5lZEF0IjoiMjAyNi0wOS0yMFQxNzowMDowMC4wMDBaIiwic3RhdHVzIjoid2FpdGluZyIsInNlcnZpY2VNaW51dGVzIjo0NX0="
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "eventId": "35",
+      "eventTime": "2026-10-07T02:04:31.335667541Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1049344",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "juniper-dev-worker-276e817757e14edbaed832d011b15bcd",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "juniper-waitlist"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "36",
+      "eventTime": "2026-10-07T02:04:31.336027784Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1049345",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "35",
+        "identity": "juniper-dev-worker",
+        "requestId": "5ceb0118-24e7-44f2-8d70-98a866aaed50",
+        "historySizeBytes": "11982",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        }
+      }
+    },
+    {
+      "eventId": "37",
+      "eventTime": "2026-10-07T02:04:31.339183471Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1049346",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "35",
+        "startedEventId": "36",
+        "identity": "juniper-dev-worker",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "38",
+      "eventTime": "2026-10-07T02:04:31.339264677Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_ACCEPTED",
+      "taskId": "1049347",
+      "workflowExecutionUpdateAcceptedEventAttributes": {
+        "protocolInstanceId": "a423f5cf-8639-42d5-94cf-66d1dca49bcf",
+        "acceptedRequestMessageId": "a423f5cf-8639-42d5-94cf-66d1dca49bcf/request",
+        "acceptedRequestSequencingEventId": "35",
+        "acceptedRequest": {
+          "meta": {
+            "updateId": "a423f5cf-8639-42d5-94cf-66d1dca49bcf",
+            "identity": "juniper-dev-worker"
+          },
+          "input": {
+            "header": {},
+            "name": "addClient",
+            "args": {
+              "payloads": [
+                {
+                  "metadata": {
+                    "encoding": "anNvbi9wbGFpbg=="
+                  },
+                  "data": "eyJuYW1lIjoiTm9vciBIYWRkYWQiLCJtb2JpbGUiOiIoNTU1KSAwMTAtNzcyMCIsInNlcnZpY2UiOiJoYWlyY3V0Iiwic3R5bGlzdFByZWZlcmVuY2UiOnsia2luZCI6ImFueSJ9LCJhdmFpbGFiaWxpdHkiOlt7IndlZWtkYXkiOjAsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIyMTowMCJ9LHsid2Vla2RheSI6MSwic3RhcnQiOiIwOTowMCIsImVuZCI6IjIxOjAwIn0seyJ3ZWVrZGF5IjoyLCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMjE6MDAifSx7IndlZWtkYXkiOjMsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIyMTowMCJ9LHsid2Vla2RheSI6NCwic3RhcnQiOiIwOTowMCIsImVuZCI6IjIxOjAwIn0seyJ3ZWVrZGF5Ijo1LCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMjE6MDAifSx7IndlZWtkYXkiOjYsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIyMTowMCJ9XSwiam9pbmVkQXQiOiIyMDI2LTA5LTI1VDE3OjAwOjAwLjAwMFoifQ=="
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "eventId": "39",
+      "eventTime": "2026-10-07T02:04:31.339340176Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_COMPLETED",
+      "taskId": "1049348",
+      "workflowExecutionUpdateCompletedEventAttributes": {
+        "meta": {
+          "updateId": "a423f5cf-8639-42d5-94cf-66d1dca49bcf",
+          "identity": "juniper-dev-worker"
+        },
+        "acceptedEventId": "38",
+        "outcome": {
+          "success": {
+            "payloads": [
+              {
+                "metadata": {
+                  "encoding": "anNvbi9wbGFpbg=="
+                },
+                "data": "eyJjbGllbnRJZCI6ImNsaWVudC03Iiwic2VxIjo3LCJuYW1lIjoiTm9vciBIYWRkYWQiLCJtb2JpbGUiOiIoNTU1KSAwMTAtNzcyMCIsInNlcnZpY2UiOiJoYWlyY3V0Iiwic3R5bGlzdFByZWZlcmVuY2UiOnsia2luZCI6ImFueSJ9LCJhdmFpbGFiaWxpdHkiOlt7IndlZWtkYXkiOjAsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIyMTowMCJ9LHsid2Vla2RheSI6MSwic3RhcnQiOiIwOTowMCIsImVuZCI6IjIxOjAwIn0seyJ3ZWVrZGF5IjoyLCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMjE6MDAifSx7IndlZWtkYXkiOjMsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIyMTowMCJ9LHsid2Vla2RheSI6NCwic3RhcnQiOiIwOTowMCIsImVuZCI6IjIxOjAwIn0seyJ3ZWVrZGF5Ijo1LCJzdGFydCI6IjA5OjAwIiwiZW5kIjoiMjE6MDAifSx7IndlZWtkYXkiOjYsInN0YXJ0IjoiMDk6MDAiLCJlbmQiOiIyMTowMCJ9XSwiam9pbmVkQXQiOiIyMDI2LTA5LTI1VDE3OjAwOjAwLjAwMFoiLCJzdGF0dXMiOiJ3YWl0aW5nIiwic2VydmljZU1pbnV0ZXMiOjQ1fQ=="
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "eventId": "40",
+      "eventTime": "2026-10-07T02:04:31.360668788Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1049355",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "juniper-dev-worker-276e817757e14edbaed832d011b15bcd",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "juniper-waitlist"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "41",
+      "eventTime": "2026-10-07T02:04:31.361016072Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1049356",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "40",
+        "identity": "juniper-dev-worker",
+        "requestId": "1fba7363-7aa1-455b-b10b-09797a12ea48",
+        "historySizeBytes": "13819",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        }
+      }
+    },
+    {
+      "eventId": "42",
+      "eventTime": "2026-10-07T02:04:31.369162742Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1049357",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "40",
+        "startedEventId": "41",
+        "identity": "juniper-dev-worker",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "43",
+      "eventTime": "2026-10-07T02:04:31.369282197Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_ACCEPTED",
+      "taskId": "1049358",
+      "workflowExecutionUpdateAcceptedEventAttributes": {
+        "protocolInstanceId": "f558a223-f78f-4f12-a981-66084a7101e0",
+        "acceptedRequestMessageId": "f558a223-f78f-4f12-a981-66084a7101e0/request",
+        "acceptedRequestSequencingEventId": "40",
+        "acceptedRequest": {
+          "meta": {
+            "updateId": "f558a223-f78f-4f12-a981-66084a7101e0",
+            "identity": "juniper-dev-worker"
+          },
+          "input": {
+            "header": {},
+            "name": "createOpening",
+            "args": {
+              "payloads": [
+                {
+                  "metadata": {
+                    "encoding": "anNvbi9wbGFpbg=="
+                  },
+                  "data": "eyJzdGFydCI6IjIwMjYtMTAtMDdUMDM6MDA6MDAuMDAwWiIsInN0eWxpc3QiOiJNYXJpYSIsImR1cmF0aW9uTWluIjo0NSwibG9jYWwiOnsiZGF0ZSI6IjIwMjYtMTAtMDYiLCJ3ZWVrZGF5IjoyLCJtaW51dGVzIjoxMjAwfSwiY2FsZW5kYXIiOlt7ImRhdGUiOiIyMDI2LTEwLTA1Iiwic3RhcnRzQXQiOjE3OTExODM2MDAwMDAsImVuZHNBdCI6MTc5MTI3MDAwMDAwMCwib3BlbnNBdCI6bnVsbCwiY2xvc2VzQXQiOm51bGx9LHsiZGF0ZSI6IjIwMjYtMTAtMDYiLCJzdGFydHNBdCI6MTc5MTI3MDAwMDAwMCwiZW5kc0F0IjoxNzkxMzU2NDAwMDAwLCJvcGVuc0F0IjoxNzkxMzAyNDAwMDAwLCJjbG9zZXNBdCI6MTc5MTMzODQwMDAwMH1dfQ=="
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "eventId": "44",
+      "eventTime": "2026-10-07T02:04:31.369307572Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_COMPLETED",
+      "taskId": "1049359",
+      "workflowExecutionUpdateCompletedEventAttributes": {
+        "meta": {
+          "updateId": "f558a223-f78f-4f12-a981-66084a7101e0",
+          "identity": "juniper-dev-worker"
+        },
+        "acceptedEventId": "43",
+        "outcome": {
+          "success": {
+            "payloads": [
+              {
+                "metadata": {
+                  "encoding": "anNvbi9wbGFpbg=="
+                },
+                "data": "eyJvcGVuaW5nSWQiOiJvcGVuaW5nLTgiLCJzZXEiOjgsInN0YXJ0IjoiMjAyNi0xMC0wN1QwMzowMDowMC4wMDBaIiwibG9jYWwiOnsiZGF0ZSI6IjIwMjYtMTAtMDYiLCJ3ZWVrZGF5IjoyLCJtaW51dGVzIjoxMjAwfSwic3R5bGlzdCI6Ik1hcmlhIiwiZHVyYXRpb25NaW4iOjQ1LCJzdGF0dXMiOiJtYXRjaGluZyIsIm9mZmVySWRzIjpbXSwicmVjb3JkZWRJblNxdWFyZSI6ZmFsc2UsImNyZWF0ZWRBdCI6IjIwMjYtMTAtMDdUMDI6MDQ6MzEuMzYxWiIsIm9mZmVycyI6W119"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "eventId": "45",
+      "eventTime": "2026-10-07T02:04:31.369317530Z",
+      "eventType": "EVENT_TYPE_TIMER_STARTED",
+      "taskId": "1049360",
+      "timerStartedEventAttributes": {
+        "timerId": "1",
+        "startToFireTimeout": "60s",
+        "workflowTaskCompletedEventId": "42"
+      }
+    },
+    {
+      "eventId": "46",
+      "eventTime": "2026-10-07T02:05:31.377459581Z",
+      "eventType": "EVENT_TYPE_TIMER_FIRED",
+      "taskId": "1049364",
+      "timerFiredEventAttributes": {
+        "timerId": "1",
+        "startedEventId": "45"
+      }
+    },
+    {
+      "eventId": "47",
+      "eventTime": "2026-10-07T02:05:31.377605620Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1049365",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "juniper-dev-worker-276e817757e14edbaed832d011b15bcd",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "juniper-waitlist"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "48",
+      "eventTime": "2026-10-07T02:05:31.393918666Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1049369",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "47",
+        "identity": "juniper-dev-worker",
+        "requestId": "d3a0135e-1783-48b4-bcdd-975ab647524b",
+        "historySizeBytes": "15473",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        }
+      }
+    },
+    {
+      "eventId": "49",
+      "eventTime": "2026-10-07T02:05:31.411564603Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1049373",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "47",
+        "startedEventId": "48",
+        "identity": "juniper-dev-worker",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "50",
+      "eventTime": "2026-10-07T02:05:31.411660101Z",
+      "eventType": "EVENT_TYPE_TIMER_STARTED",
+      "taskId": "1049374",
+      "timerStartedEventAttributes": {
+        "timerId": "2",
+        "startToFireTimeout": "60s",
+        "workflowTaskCompletedEventId": "49"
+      }
+    },
+    {
+      "eventId": "51",
+      "eventTime": "2026-10-07T02:05:32.859661040Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1049381",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "juniper-dev-worker-276e817757e14edbaed832d011b15bcd",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "juniper-waitlist"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "52",
+      "eventTime": "2026-10-07T02:05:32.860553231Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1049382",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "51",
+        "identity": "juniper-dev-worker",
+        "requestId": "2653e753-dd2c-40fd-82a7-fe47ef0b68ce",
+        "historySizeBytes": "15860",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        }
+      }
+    },
+    {
+      "eventId": "53",
+      "eventTime": "2026-10-07T02:05:32.868287408Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1049383",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "51",
+        "startedEventId": "52",
+        "identity": "juniper-dev-worker",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "54",
+      "eventTime": "2026-10-07T02:05:32.868476779Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_ACCEPTED",
+      "taskId": "1049384",
+      "workflowExecutionUpdateAcceptedEventAttributes": {
+        "protocolInstanceId": "f833405f-9faf-4e75-8134-28aef7f4b9e8",
+        "acceptedRequestMessageId": "f833405f-9faf-4e75-8134-28aef7f4b9e8/request",
+        "acceptedRequestSequencingEventId": "51",
+        "acceptedRequest": {
+          "meta": {
+            "updateId": "f833405f-9faf-4e75-8134-28aef7f4b9e8",
+            "identity": "juniper-dev-worker"
+          },
+          "input": {
+            "header": {},
+            "name": "respondToOffer",
+            "args": {
+              "payloads": [
+                {
+                  "metadata": {
+                    "encoding": "anNvbi9wbGFpbg=="
+                  },
+                  "data": "eyJvZmZlcklkIjoiMDUxZDZhNmMtOTg0ZS00NmZiLWI2ODctMmI3ZDI3MGRhODg1IiwiYW5zd2VyIjoiYWNjZXB0In0="
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "eventId": "55",
+      "eventTime": "2026-10-07T02:05:32.868553194Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_COMPLETED",
+      "taskId": "1049385",
+      "workflowExecutionUpdateCompletedEventAttributes": {
+        "meta": {
+          "updateId": "f833405f-9faf-4e75-8134-28aef7f4b9e8",
+          "identity": "juniper-dev-worker"
+        },
+        "acceptedEventId": "54",
+        "outcome": {
+          "success": {
+            "payloads": [
+              {
+                "metadata": {
+                  "encoding": "anNvbi9wbGFpbg=="
+                },
+                "data": "eyJvdXRjb21lIjoibm8tbG9uZ2VyLWF2YWlsYWJsZSIsIm9wZW5pbmciOnsib3BlbmluZ0lkIjoib3BlbmluZy04Iiwic2VxIjo4LCJzdGFydCI6IjIwMjYtMTAtMDdUMDM6MDA6MDAuMDAwWiIsImxvY2FsIjp7ImRhdGUiOiIyMDI2LTEwLTA2Iiwid2Vla2RheSI6MiwibWludXRlcyI6MTIwMH0sInN0eWxpc3QiOiJNYXJpYSIsImR1cmF0aW9uTWluIjo0NSwic3RhdHVzIjoiaGVsZCIsIm9mZmVySWRzIjpbIjA1MWQ2YTZjLTk4NGUtNDZmYi1iNjg3LTJiN2QyNzBkYTg4NSIsImY3MGM0ZmVjLWVhY2ItNDYwYi04YjhjLWFlYmZjNTVmYmQyMCJdLCJyZWNvcmRlZEluU3F1YXJlIjpmYWxzZSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0wN1QwMjowNDozMS4zNjFaIiwiY3VycmVudE9mZmVySWQiOiJmNzBjNGZlYy1lYWNiLTQ2MGItOGI4Yy1hZWJmYzU1ZmJkMjAiLCJvZmZlcnMiOlt7Im9mZmVySWQiOiIwNTFkNmE2Yy05ODRlLTQ2ZmItYjY4Ny0yYjdkMjcwZGE4ODUiLCJvcGVuaW5nSWQiOiJvcGVuaW5nLTgiLCJjbGllbnRJZCI6ImNsaWVudC02Iiwib2ZmZXJlZEF0IjoiMjAyNi0xMC0wN1QwMjowNDozMS4zNjFaIiwiZXhwaXJlc0F0IjoiMjAyNi0xMC0wN1QwMjowNTozMS4zNjFaIiwib3V0Y29tZSI6ImV4cGlyZWQiLCJyZXNvbHZlZEF0IjoiMjAyNi0xMC0wN1QwMjowNTozMS4zNjFaIiwiY2xpZW50TmFtZSI6Ik1pYSBMb3BleiJ9LHsib2ZmZXJJZCI6ImY3MGM0ZmVjLWVhY2ItNDYwYi04YjhjLWFlYmZjNTVmYmQyMCIsIm9wZW5pbmdJZCI6Im9wZW5pbmctOCIsImNsaWVudElkIjoiY2xpZW50LTciLCJvZmZlcmVkQXQiOiIyMDI2LTEwLTA3VDAyOjA1OjMxLjM5M1oiLCJleHBpcmVzQXQiOiIyMDI2LTEwLTA3VDAyOjA2OjMxLjM5M1oiLCJvdXRjb21lIjoicGVuZGluZyIsImNsaWVudE5hbWUiOiJOb29yIEhhZGRhZCJ9XSwiaGVsZEJ5Ijp7ImNsaWVudElkIjoiY2xpZW50LTciLCJuYW1lIjoiTm9vciBIYWRkYWQifX19"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "eventId": "56",
+      "eventTime": "2026-10-07T02:05:42.981738623Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1049392",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "juniper-dev-worker-276e817757e14edbaed832d011b15bcd",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "juniper-waitlist"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "57",
+      "eventTime": "2026-10-07T02:05:42.982187948Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1049393",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "56",
+        "identity": "juniper-dev-worker",
+        "requestId": "1e276647-7308-4865-a6a5-5fe20e92d60b",
+        "historySizeBytes": "17743",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        }
+      }
+    },
+    {
+      "eventId": "58",
+      "eventTime": "2026-10-07T02:05:42.986713440Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1049394",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "56",
+        "startedEventId": "57",
+        "identity": "juniper-dev-worker",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "59",
+      "eventTime": "2026-10-07T02:05:42.986834271Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_ACCEPTED",
+      "taskId": "1049395",
+      "workflowExecutionUpdateAcceptedEventAttributes": {
+        "protocolInstanceId": "df912a50-fc97-43fc-a431-527b9474a630",
+        "acceptedRequestMessageId": "df912a50-fc97-43fc-a431-527b9474a630/request",
+        "acceptedRequestSequencingEventId": "56",
+        "acceptedRequest": {
+          "meta": {
+            "updateId": "df912a50-fc97-43fc-a431-527b9474a630",
+            "identity": "juniper-dev-worker"
+          },
+          "input": {
+            "header": {},
+            "name": "respondToOffer",
+            "args": {
+              "payloads": [
+                {
+                  "metadata": {
+                    "encoding": "anNvbi9wbGFpbg=="
+                  },
+                  "data": "eyJvZmZlcklkIjoiZjcwYzRmZWMtZWFjYi00NjBiLThiOGMtYWViZmM1NWZiZDIwIiwiYW5zd2VyIjoiZGVjbGluZSJ9"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "eventId": "60",
+      "eventTime": "2026-10-07T02:05:42.986871395Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_COMPLETED",
+      "taskId": "1049396",
+      "workflowExecutionUpdateCompletedEventAttributes": {
+        "meta": {
+          "updateId": "df912a50-fc97-43fc-a431-527b9474a630",
+          "identity": "juniper-dev-worker"
+        },
+        "acceptedEventId": "59",
+        "outcome": {
+          "success": {
+            "payloads": [
+              {
+                "metadata": {
+                  "encoding": "anNvbi9wbGFpbg=="
+                },
+                "data": "eyJvdXRjb21lIjoiZGVjbGluZWQiLCJvcGVuaW5nIjp7Im9wZW5pbmdJZCI6Im9wZW5pbmctOCIsInNlcSI6OCwic3RhcnQiOiIyMDI2LTEwLTA3VDAzOjAwOjAwLjAwMFoiLCJsb2NhbCI6eyJkYXRlIjoiMjAyNi0xMC0wNiIsIndlZWtkYXkiOjIsIm1pbnV0ZXMiOjEyMDB9LCJzdHlsaXN0IjoiTWFyaWEiLCJkdXJhdGlvbk1pbiI6NDUsInN0YXR1cyI6Im1hdGNoaW5nIiwib2ZmZXJJZHMiOlsiMDUxZDZhNmMtOTg0ZS00NmZiLWI2ODctMmI3ZDI3MGRhODg1IiwiZjcwYzRmZWMtZWFjYi00NjBiLThiOGMtYWViZmM1NWZiZDIwIl0sInJlY29yZGVkSW5TcXVhcmUiOmZhbHNlLCJjcmVhdGVkQXQiOiIyMDI2LTEwLTA3VDAyOjA0OjMxLjM2MVoiLCJvZmZlcnMiOlt7Im9mZmVySWQiOiIwNTFkNmE2Yy05ODRlLTQ2ZmItYjY4Ny0yYjdkMjcwZGE4ODUiLCJvcGVuaW5nSWQiOiJvcGVuaW5nLTgiLCJjbGllbnRJZCI6ImNsaWVudC02Iiwib2ZmZXJlZEF0IjoiMjAyNi0xMC0wN1QwMjowNDozMS4zNjFaIiwiZXhwaXJlc0F0IjoiMjAyNi0xMC0wN1QwMjowNTozMS4zNjFaIiwib3V0Y29tZSI6ImV4cGlyZWQiLCJyZXNvbHZlZEF0IjoiMjAyNi0xMC0wN1QwMjowNTozMS4zNjFaIiwiY2xpZW50TmFtZSI6Ik1pYSBMb3BleiJ9LHsib2ZmZXJJZCI6ImY3MGM0ZmVjLWVhY2ItNDYwYi04YjhjLWFlYmZjNTVmYmQyMCIsIm9wZW5pbmdJZCI6Im9wZW5pbmctOCIsImNsaWVudElkIjoiY2xpZW50LTciLCJvZmZlcmVkQXQiOiIyMDI2LTEwLTA3VDAyOjA1OjMxLjM5M1oiLCJleHBpcmVzQXQiOiIyMDI2LTEwLTA3VDAyOjA2OjMxLjM5M1oiLCJvdXRjb21lIjoiZGVjbGluZWQiLCJyZXNvbHZlZEF0IjoiMjAyNi0xMC0wN1QwMjowNTo0Mi45ODJaIiwiY2xpZW50TmFtZSI6Ik5vb3IgSGFkZGFkIn1dfX0="
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "eventId": "61",
+      "eventTime": "2026-10-07T02:05:42.986909394Z",
+      "eventType": "EVENT_TYPE_TIMER_CANCELED",
+      "taskId": "1049397",
+      "timerCanceledEventAttributes": {
+        "timerId": "2",
+        "startedEventId": "50",
+        "workflowTaskCompletedEventId": "58",
+        "identity": "juniper-dev-worker"
+      }
+    },
+    {
+      "eventId": "62",
+      "eventTime": "2026-10-07T02:05:43.009353818Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_SCHEDULED",
+      "taskId": "1049404",
+      "workflowTaskScheduledEventAttributes": {
+        "taskQueue": {
+          "name": "juniper-dev-worker-276e817757e14edbaed832d011b15bcd",
+          "kind": "TASK_QUEUE_KIND_STICKY",
+          "normalName": "juniper-waitlist"
+        },
+        "startToCloseTimeout": "10s",
+        "attempt": 1
+      }
+    },
+    {
+      "eventId": "63",
+      "eventTime": "2026-10-07T02:05:43.009729852Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_STARTED",
+      "taskId": "1049405",
+      "workflowTaskStartedEventAttributes": {
+        "scheduledEventId": "62",
+        "identity": "juniper-dev-worker",
+        "requestId": "b01ba68d-f5bd-4982-873f-245cca0b2851",
+        "historySizeBytes": "19614",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        }
+      }
+    },
+    {
+      "eventId": "64",
+      "eventTime": "2026-10-07T02:05:43.014664836Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_TASK_COMPLETED",
+      "taskId": "1049406",
+      "workflowTaskCompletedEventAttributes": {
+        "scheduledEventId": "62",
+        "startedEventId": "63",
+        "identity": "juniper-dev-worker",
+        "workerVersion": {
+          "buildId": "@temporalio/worker@1.24.0+ecb2e79b58d265cb919c224a28b814473ed406625aead7a2f1633c03bae2cea0"
+        },
+        "sdkMetadata": {},
+        "meteringMetadata": {}
+      }
+    },
+    {
+      "eventId": "65",
+      "eventTime": "2026-10-07T02:05:43.014735918Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_ACCEPTED",
+      "taskId": "1049407",
+      "workflowExecutionUpdateAcceptedEventAttributes": {
+        "protocolInstanceId": "77c47715-853c-45d2-8229-edb7db4a87fb",
+        "acceptedRequestMessageId": "77c47715-853c-45d2-8229-edb7db4a87fb/request",
+        "acceptedRequestSequencingEventId": "62",
+        "acceptedRequest": {
+          "meta": {
+            "updateId": "77c47715-853c-45d2-8229-edb7db4a87fb",
+            "identity": "juniper-dev-worker"
+          },
+          "input": {
+            "header": {},
+            "name": "createOpening",
+            "args": {
+              "payloads": [
+                {
+                  "metadata": {
+                    "encoding": "anNvbi9wbGFpbg=="
+                  },
+                  "data": "eyJzdGFydCI6IjIwMjYtMTAtMDdUMTc6MDA6MDAuMDAwWiIsInN0eWxpc3QiOiJNYXJpYSIsImR1cmF0aW9uTWluIjo0NSwibG9jYWwiOnsiZGF0ZSI6IjIwMjYtMTAtMDciLCJ3ZWVrZGF5IjozLCJtaW51dGVzIjo2MDB9LCJjYWxlbmRhciI6W3siZGF0ZSI6IjIwMjYtMTAtMDUiLCJzdGFydHNBdCI6MTc5MTE4MzYwMDAwMCwiZW5kc0F0IjoxNzkxMjcwMDAwMDAwLCJvcGVuc0F0IjpudWxsLCJjbG9zZXNBdCI6bnVsbH0seyJkYXRlIjoiMjAyNi0xMC0wNiIsInN0YXJ0c0F0IjoxNzkxMjcwMDAwMDAwLCJlbmRzQXQiOjE3OTEzNTY0MDAwMDAsIm9wZW5zQXQiOjE3OTEzMDI0MDAwMDAsImNsb3Nlc0F0IjoxNzkxMzM4NDAwMDAwfSx7ImRhdGUiOiIyMDI2LTEwLTA3Iiwic3RhcnRzQXQiOjE3OTEzNTY0MDAwMDAsImVuZHNBdCI6MTc5MTQ0MjgwMDAwMCwib3BlbnNBdCI6MTc5MTM4ODgwMDAwMCwiY2xvc2VzQXQiOjE3OTE0MjQ4MDAwMDB9XX0="
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "eventId": "66",
+      "eventTime": "2026-10-07T02:05:43.014772459Z",
+      "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_UPDATE_COMPLETED",
+      "taskId": "1049408",
+      "workflowExecutionUpdateCompletedEventAttributes": {
+        "meta": {
+          "updateId": "77c47715-853c-45d2-8229-edb7db4a87fb",
+          "identity": "juniper-dev-worker"
+        },
+        "acceptedEventId": "65",
+        "outcome": {
+          "success": {
+            "payloads": [
+              {
+                "metadata": {
+                  "encoding": "anNvbi9wbGFpbg=="
+                },
+                "data": "eyJvcGVuaW5nSWQiOiJvcGVuaW5nLTkiLCJzZXEiOjksInN0YXJ0IjoiMjAyNi0xMC0wN1QxNzowMDowMC4wMDBaIiwibG9jYWwiOnsiZGF0ZSI6IjIwMjYtMTAtMDciLCJ3ZWVrZGF5IjozLCJtaW51dGVzIjo2MDB9LCJzdHlsaXN0IjoiTWFyaWEiLCJkdXJhdGlvbk1pbiI6NDUsInN0YXR1cyI6Im1hdGNoaW5nIiwib2ZmZXJJZHMiOltdLCJyZWNvcmRlZEluU3F1YXJlIjpmYWxzZSwiY3JlYXRlZEF0IjoiMjAyNi0xMC0wN1QwMjowNTo0My4wMDlaIiwib2ZmZXJzIjpbXX0="
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "eventId": "67",
+      "eventTime": "2026-10-07T02:05:43.014782208Z",
+      "eventType": "EVENT_TYPE_TIMER_STARTED",
+      "taskId": "1049409",
+      "timerStartedEventAttributes": {
+        "timerId": "3",
+        "startToFireTimeout": "50056.991s",
+        "workflowTaskCompletedEventId": "64"
+      }
+    }
+  ]
+}
