@@ -1,69 +1,75 @@
-# Temporal post-assessment starter
+# Juniper Salon waitlist
 
-This repository provides a working local Temporal environment, API, Worker, and browser interface. The included neutral demo is intentionally unrelated to the customer’s final process. Use what you learn in the customer conversation to replace it.
+**Juniper** is a front-desk waitlist for a small salon. When an appointment is cancelled, staff add the opening. Juniper offers it to waitlisted clients **one at a time**, in the order they joined, to the first person who fits:
+- the service
+- the length
+- their availability
+- their stylist rule
 
-## Important: create a new public repository—do not fork
+Each client has a written reply deadline. If they say no or don't reply in time, the next person is offered it automatically. Two people are never promised the same slot.
 
-Your submission must be in a brand-new **public** GitHub repository. **Do not use GitHub’s Fork button.** Forks connect submissions through GitHub’s fork network and can make other participants’ work easier to locate.
+It replaces the salon's spreadsheet-and-texting routine, where follow-ups were forgotten and freed slots were never re-offered.
 
-Do not add `john-b-yang` or `vishakhpk` as collaborators. Because the repository is public, the assessment team can review it without write access.
+**Why Temporal:** the process runs for minutes or days and must survive restarts without double-booking anyone. One long-running salon Workflow owns all openings, offers and clients:
+- every reply is an atomic Update
+- every reply deadline is a durable timer
+- the event history shows exactly what happened
 
-Before the timed assessment:
+## Run it
 
-1. Create a new **public** repository in your assigned GitHub organization. Do not initialize it with a README.
-2. Clone the starter:
-
-   ```bash
-   git clone <STARTER_REPOSITORY_URL> temporal-assessment
-   cd temporal-assessment
-   ```
-
-3. Point the clone at your new repository:
-
-   ```bash
-   git remote remove origin
-   git branch -M main
-   git remote add origin git@github.com:<YOUR_ORGANIZATION>/<YOUR_REPOSITORY>.git
-   git push -u origin main
-   ```
-
-4. Confirm that GitHub displays the **Public** label and does not say “forked from” another repository.
-
-If you accidentally create a fork, do not push assessment work to it. Create a new public repository, change your local `origin`, and ask the course team to remove the fork. Do not search for or view other participants’ assessment repositories.
-
-## Verify setup before the timed assessment
-
-Requirements: Node.js 20 or newer and Docker Desktop.
+Requirements: **Node.js 20+** (tested on 26) and **Docker** (Docker Desktop, or Colima on macOS).
 
 ```bash
 npm install
-npm run dev
+npm run dev        # starts Temporal (Docker), the Worker and the API
 ```
 
-Open <http://localhost:3000>, run the demo, and confirm that it completes. You can inspect it in the Temporal Web UI at <http://localhost:8233>. Setup time does not count toward the assessment.
-
-Other commands:
+- **App:** <http://localhost:3000>
+- **Temporal Web UI:** <http://localhost:8233> (Workflow ID `juniper-waitlist`)
 
 ```bash
-npm test          # Run the starter Workflow test without Docker
-npm run typecheck # Check TypeScript
-npm run stop      # Stop the local Temporal service
+npm test           # unit, Workflow (local Temporal test server), replay and rendering tests
+npm run typecheck
+npm run stop       # stop Temporal (data is kept)
 ```
 
-## Repository map
+**To start completely fresh** (fictional development data only): `docker compose down -v`, then `npm run dev`.
 
-- `src/workflows.ts` — durable Workflow logic and message handlers
-- `src/worker.ts` — Worker and Task Queue configuration
-- `src/api.ts` — browser-facing API and Temporal Client
-- `src/types.ts` — shared data types
-- `public/` — customer-facing interface
-- `tests/` — Workflow test example
+## Demo walkthrough (about 5 minutes, plus one optional 15-minute wait)
+1. **Add the sample waitlist.** On **Waitlist**, choose **Add the sample waitlist**. Everyone is fictional; some clients already have a later appointment.
+2. **Add an opening.** On **Openings**, choose **Add opening**: tomorrow 10:00 am, Haircut, Maria, 45 minutes. It's offered to Ava Chen, the earliest-joined client who fits.
+3. **One client, one offer.** Add a second opening (tomorrow 11:00 am, same details). Ava already holds an offer, so it shows **"Waiting for an eligible client to become available"**.
+4. **Decline.** Use **Open offer** on Ava's row (this simulates the text link) and choose **No thanks**. The 11:00 opening is offered to Ava straight away.
+5. **Accept and move.** Accept the 11:00 offer. Ava's page says **"Your new time is reserved"**. Ava's existing appointment (a 2-hour color, two days out) becomes a **new opening** and is offered to the next client who fits it (Chloe, who wants a color). On the **front desk** (`/`), **Needs attention** shows **"Move Ava Chen's booking in Square"**. Choose **Mark as recorded** once it's done.
+6. **No reply (optional, real time):** add an opening for **today**, a little later than now. The offer holds for **15 minutes**. Leave it, and when the timer fires, the next client is offered it ("No reply from … by …").
+7. **Staff inclusion:** add tomorrow 10:00 am, **Blowout**, Maria. Only Dev Patel wants a blowout, and Dev *prefers* Jo, so the row shows **"No automatic match"** and **"Dev Patel prefers Jo"** with a quiet **"Include for this opening"** action. Including Dev offers it through the normal process.
 
-You may change any application file. Do not edit generated files in `node_modules`.
+## Configuration
 
-## Documentation
+`config/salon.json` holds the salon's **time zone** and **weekly hours**. These are **sample prototype values**, since we don't have the real salon's hours. It also holds the reply windows.
 
-- [TypeScript developer guide](https://docs.temporal.io/develop/typescript)
-- [Workflows](https://docs.temporal.io/workflows)
-- [Activities](https://docs.temporal.io/activities)
-- [Signals, Queries, and Updates](https://docs.temporal.io/encyclopedia/workflow-message-passing)
+**Reply rules:**
+- **Same-day openings:** 15 minutes.
+- **Later-day openings:** until closing on the day the offer is sent.
+- **Sent near or after closing:** until the next morning's opening time.
+- **Never past the appointment start.**
+
+The API resolves time-zone facts outside the Workflow (see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)).
+
+**Environment variables:**
+- `JUNIPER_SALON_CONFIG`: an alternative config file.
+- `JUNIPER_SAME_DAY_REPLY_MIN`: **for demos only**. It prints a warning, and the startup guard won't attach a standard-configuration API to a salon started with it.
+
+## Simulated, and out of scope
+- **Text messages are simulated:** the client "text" is the offer page link. No SMS is sent.
+- **Square isn't integrated:** Juniper never reads or writes Square. Staff update Square and mark the reminder done.
+- **Not built:**
+  - an add-client form (the sample waitlist and API only)
+  - cancelling openings
+  - editing or removing clients
+  - client cancellations after booking
+
+## More
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): how it works, determinism, and known limitations
+- [docs/REQUIREMENTS.md](docs/REQUIREMENTS.md): every requirement, its source (customer-confirmed or prototype assumption), and how it's verified
+- [evidence/](evidence/): the Temporal Web UI screenshot and product screenshots
